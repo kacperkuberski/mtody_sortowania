@@ -1,0 +1,74 @@
+#include<bits/stdc++.h>
+using namespace std;
+int a[100];
+void sortuj()
+{
+	sort(a,a+100);
+}
+void drukuj()
+{
+	for(int i=0;i<100;i++)
+	cout<<a[i]<<" ";
+	cout<<endl;
+}
+void losuj()
+{
+	srand(time(NULL));
+	for(int i=0;i<100;i++)
+		a[i]=rand()%100+1;
+}
+void bable()
+{
+	   for (int i = 0; i < 100-1; ++i) 
+	   {
+        for (int j = 0; j < 100-i-1; ++j) 
+		{
+            if (a[j] > a[j+1])
+			 {
+                // Zamiana miejscami
+                int temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp;
+			}
+		}
+	}
+}
+
+void menu()
+{
+		cout<<"***************************";
+		cout<<" Siemaaaaaaaaaaaaaaaaaaaaaa";
+		cout<<"***************************\n";
+		cout<<"1-losowanie do tablicy\n";
+		cout<<"2-drukowanie tablicy\n";
+		cout<<"3-sortowanie tradycyjne\n";
+		cout<<"4-losowanie bombelkowe\n";
+		cout<<"0-exit\n";
+		
+	}
+main()
+{
+	int odp;
+	while(true)
+	{
+	menu();
+	cin>>odp;
+	switch(odp)
+		{
+		case 1:
+			losuj();
+			break;
+		case 2:
+			drukuj();
+			break;
+		case 3:
+			sortuj();
+			break;
+		case 4:
+			bable();
+			break;
+		case 0:
+			return 0;
+		}
+	}
+}
